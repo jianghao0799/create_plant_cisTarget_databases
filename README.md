@@ -176,7 +176,7 @@ Output files:
 
 ### Create `motif2TF.tbl`
 
-````
+````R
 library(dplyr)
 motif2TF <- read.table("/lustre/home/jianghao/02_workspace/08_spatial_omics/18_GRN/pyscenic_databases/cis_bp/TF_Information_all_motifs_plus.txt",
     header = TRUE, sep = "\t")
@@ -185,7 +185,7 @@ head(motif2TF)
 
 ![image-20250707230053229](D:\06_GitHub\create_plant_cisTarget_databases\image-20250707230053229.png)
 
-````
+````R
 
 # Assuming motif2TF is a three-column data frame with the information of motifs and their corresponding TFs like this:
 # motif TF source
