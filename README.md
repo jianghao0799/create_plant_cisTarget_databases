@@ -183,9 +183,7 @@ motif2TF <- read.table("/lustre/home/jianghao/02_workspace/08_spatial_omics/18_G
 head(motif2TF)
 ````
 
-![image-20250707230053229](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20250707230053229.png)
-
-
+![image-20250707230053229](D:\06_GitHub\create_plant_cisTarget_databases\image-20250707230053229.png)
 
 ````
 
