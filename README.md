@@ -243,3 +243,8 @@ pyscenic aucell \
     --num_workers 20
 ```
 
+## Reference
+
+[pyscenic 构建自己的 cisTarget 数据库](https://mp.weixin.qq.com/s/7-vKrLiFS4Tlkt-rHxEGeQ)
+
+[pySCENIC分析全流程相关代码](https://mp.weixin.qq.com/s/xbmyAiLyWBJk0E1x6PSLWw)
