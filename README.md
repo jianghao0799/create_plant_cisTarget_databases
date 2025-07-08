@@ -248,3 +248,5 @@ pyscenic aucell \
 [pyscenic 构建自己的 cisTarget 数据库](https://mp.weixin.qq.com/s/7-vKrLiFS4Tlkt-rHxEGeQ)
 
 [pySCENIC分析全流程相关代码](https://mp.weixin.qq.com/s/xbmyAiLyWBJk0E1x6PSLWw)
+
+Cao, S., He, Z., Chen, R., Luo, Y., Fu, L.-Y., Zhou, X., He, C., Yan, W., Zhang, C.-Y., & Chen, D. (2023). scPlant: A versatile framework for single-cell transcriptomic data analysis in plants. *Plant Communications*, *4*(5), 100631. https://doi.org/10.1016/j.xplc.2023.100631
