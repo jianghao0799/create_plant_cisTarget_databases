@@ -49,7 +49,7 @@ python generate_cb_files.py
 
 
 
-### Extract promoter sequenc
+### Extract promoter sequence
 
 Input file:
 
@@ -117,6 +117,8 @@ seq_list <- DNAStringSet(seq_list)
 # 添加名称
 names(seq_list) <- genes$gene_name
 
+fasta_filtered <- seq_list[width(seq_list) > 1]
+
 writeXStringSet(fasta_filtered,filepath = "Stu_dm4_gene_3kpromoter.fasta",format="fasta")
 
 ########## Extract 3k bp sequence upstream of CDS #############
@@ -153,7 +155,7 @@ cds_seqs <- DNAStringSet(cds_seqs)
 
 # 设置名称为 gene_id 或 gene_name
 names(cds_seqs) <- cds_promoter$gene_id  # or $gene_name
-
+fasta_filtered <- cds_seqs[width(cds_seqs) > 1]
 writeXStringSet(fasta_filtered,filepath = "Stu_dm4_CDS_3kpromoter.fasta",format="fasta")
 ```
 
