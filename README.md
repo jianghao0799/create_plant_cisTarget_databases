@@ -122,6 +122,35 @@ fasta_filtered <- seq_list[width(seq_list) > 1]
 writeXStringSet(fasta_filtered,filepath = "Stu_dm4_gene_3kpromoter.fasta",format="fasta")
 
 ########## Extract 3k bp sequence upstream of CDS #############
+
+# 2. 筛选 CDS 注释
+cds <- gtf %>%
+  filter(type == "CDS" & !is.na(gene_id))
+
+# 3. 获取每个基因最靠近5'端的 CDS（取起始位点）
+cds_tss <- cds %>%
+  group_by(gene_id, strand) %>%
+  slice_min(order_by = if_else(strand == "+", start, -end), with_ties = FALSE) %>%
+  ungroup()
+
+# 4. 计算 CDS 上游 3kb 区域
+cds_promoter <- cds_tss %>%
+  mutate(
+    up_start = if_else(strand == "+", start - 3000, end + 1),
+    up_end   = if_else(strand == "+", start - 1,     end + 3000)
+  ) %>%
+  transmute(
+    seqnames = seqnames,
+    start = pmax(up_start, 1),  # 确保不小于 1
+    end = up_end,
+    strand = strand,
+    gene_id = gene_id,
+    gene_name = gene_name
+  )
+
+# 查看结果
+head(cds_promoter)
+
 cds_seqs <- lapply(1:nrow(cds_promoter), function(i) {
   tmp <- cds_promoter[i, ]
   
